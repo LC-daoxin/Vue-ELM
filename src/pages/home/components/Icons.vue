@@ -85,6 +85,7 @@ export default {
   @import '~@styles/variables.scss';
   @import '~@styles/mixins.scss';
   .icons{
+    margin-top: .1rem;
     >>> .swiper-container{
       height: 0;
       padding-bottom: 50%;
