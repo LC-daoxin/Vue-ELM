@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/variables.scss';
+  @import '~styles/variables.scss';
   .header{
     display: flex;
     height: .86rem;
