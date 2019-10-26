@@ -20,34 +20,11 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    recommendList: Array
+  },
   data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: require('@img/recommend1.jpg'),
-        title: '子胥湖·欢乐嘉年华',
-        desc: '浪漫的主题游乐园',
-        address: '郧阳区'
-      }, {
-        id: '0002',
-        imgUrl: require('@img/recommend2.jpg'),
-        title: '野人谷',
-        desc: '浪漫的主题游乐园',
-        address: '房山'
-      }, {
-        id: '0003',
-        imgUrl: require('@img/recommend3.jpg'),
-        title: '太极峡风景区',
-        desc: '浪漫的主题游乐园',
-        address: '丹江口市'
-      }, {
-        id: '0004',
-        imgUrl: require('@img/recommend4.jpg'),
-        title: '武当太极湖',
-        desc: '浪漫的主题游乐园',
-        address: '丹江口市'
-      }]
-    }
+    return {}
   }
 }
 </script>

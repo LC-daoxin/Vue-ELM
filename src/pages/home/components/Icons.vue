@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <!-- slides -->
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon"
@@ -20,49 +20,14 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconsList: Array
+  },
   data () {
     return {
-      iconsList: [{
-        id: '0001',
-        imgUrl: require('@img/icons1.png'),
-        desc: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: require('@img/icons2.png'),
-        desc: '故宫'
-      }, {
-        id: '0003',
-        imgUrl: require('@img/icons3.png'),
-        desc: '北京必游'
-      }, {
-        id: '0004',
-        imgUrl: require('@img/icons4.png'),
-        desc: '香山公园'
-      }, {
-        id: '0005',
-        imgUrl: require('@img/icons5.png'),
-        desc: '一日游'
-      }, {
-        id: '0006',
-        imgUrl: require('@img/icons6.png'),
-        desc: '古北水镇'
-      }, {
-        id: '0007',
-        imgUrl: require('@img/icons7.png'),
-        desc: '欢乐谷万圣节'
-      }, {
-        id: '0008',
-        imgUrl: require('@img/icons8.png'),
-        desc: '赏红叶'
-      }, {
-        id: '0009',
-        imgUrl: require('@img/icons9.png'),
-        desc: '泡温泉'
-      }, {
-        id: '0010',
-        imgUrl: require('@img/icons10.png'),
-        desc: '优惠券 '
-      }]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {

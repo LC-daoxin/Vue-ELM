@@ -18,25 +18,11 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    WeekendList: Array
+  },
   data () {
-    return {
-      WeekendList: [{
-        id: '0001',
-        imgUrl: require('@img/weekend1.jpg'),
-        title: '三峡人家',
-        desc: '感受长江的水三峡的情怀，自古至今，无数骚人墨客浓墨重彩的描绘三峡，赶紧领略三峡的壮美吧！'
-      }, {
-        id: '0002',
-        imgUrl: require('@img/weekend2.jpg'),
-        title: '鄂西旅游圈',
-        desc: '感受鄂西旖旎风光，土苗民族淳朴风情,恩施大峡谷里的一山有四季，十里不同天的奇观'
-      }, {
-        id: '0003',
-        imgUrl: require('@img/weekend3.jpg'),
-        title: '追溯山水',
-        desc: '美得令人窒息的峡谷，这里的景观雄奇秀美'
-      }]
-    }
+    return {}
   }
 }
 </script>
