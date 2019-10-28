@@ -21,8 +21,8 @@ export default {
   @import '~@styles/variables.scss';
   .header{
     display: flex;
-    height: .86rem;
-    line-height: .86rem;
+    height: $headerHeight;
+    line-height: $headerHeight;
     background: $bgColor;
     color: #fff;
     .header-left{
