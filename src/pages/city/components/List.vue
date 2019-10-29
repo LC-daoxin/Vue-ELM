@@ -4,7 +4,7 @@
       <div class="area">
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
+          <div class="button-wrapper" @click="handleCityClick()">
             <div class="button">{{this.city}}</div>
           </div>
         </div>
@@ -61,13 +61,21 @@ export default {
     handleCityClick (city) {
       /* this.$store.dispatch('changeCity', city) */
       /* this.$store.commit('changeCity', city) */
-      this.changeCity(city)
+      if (city) {
+        this.changeCity(city)
+      }
       this.$router.push('/')
     },
-    ...mapMutations(['changeCity'])
+    ...mapMutations(['changeCity']),
+    test (e) {
+      console.log(this.city)
+    }
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
+  },
+  activated () {
+    this.scroll.refresh()
   },
   watch: {
     letter () {
