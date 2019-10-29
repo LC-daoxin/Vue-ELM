@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper' /* 轮播图插件 */
+import store from './store'
 import '@styles/reset.css'
 import '@styles/border.css'
-import fastClick from 'fastclick'
 import '@styles/iconfont.css'
 import 'swiper/dist/css/swiper.css' /* 轮播图插件样式 */
 
@@ -18,6 +19,7 @@ Vue.use(VueAwesomeSwiper) /* 轮播图插件-全局使用 */
 new Vue({
   el: '#app',
   router,
+  store, // 键和值一样 写一个就行
   components: { App },
   template: '<App/>'
 })

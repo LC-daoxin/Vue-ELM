@@ -1,11 +1,25 @@
 <template>
   <div>
     <div class="search">
-      <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音"/>
+      <input
+        v-model="keyword"
+        class="search-input"
+        type="text"
+        :placeholder="placeholder"
+        @focus="showPlaceholder"
+        @blur="showPlaceholder"
+      />
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">{{item.name}}</li>
+        <li
+          class="search-item border-bottom"
+          v-for="item of list"
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
+          {{item.name}}
+        </li>
         <li class="search-item border-bottom textCenter" v-show="hasNoData">没有找到匹配数据</li>
       </ul>
     </div>
@@ -14,6 +28,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CitysSearch',
   props: {
@@ -23,7 +38,8 @@ export default {
     return {
       keyword: '',
       list: [],
-      timer: null
+      timer: null,
+      placeholder: '输入城市名或拼音'
     }
   },
   computed: {
@@ -51,6 +67,21 @@ export default {
         }
         this.list = result
       }, 100)
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      /* this.$store.commit('changeCity', city) */
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity']),
+    showPlaceholder () {
+      if (this.placeholder !== '') {
+        this.placeholder = ''
+      } else {
+        this.placeholder = '输入城市名或拼音'
+      }
     }
   },
   mounted () {
