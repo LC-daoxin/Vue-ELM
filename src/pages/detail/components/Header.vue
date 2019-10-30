@@ -47,6 +47,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScorll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScorll)
   }
 }
 </script>
