@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="@img/detail1.jpg"/>
+      <img class="banner-img" :src="bannerImg"/>
       <div class="banner-info">
-        <div class="banner-title">香山公园(AAAA景区)</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
-          <span class="iconfont search-icon banner-icon">&#xe691;</span> 25
+          <span class="iconfont search-icon banner-icon">&#xe691;</span> {{this.galleryImgs.length}}
         </div>
       </div>
     </div>
     <common-gallery
-      :imgs="imgs"
+      :imgs="galleryImgs"
       v-show="showGallery"
       @close="handleGalleryClose"
     ></common-gallery>
@@ -21,13 +21,17 @@
 import CommonGallery from '@common/gallery/Gallery'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    galleryImgs: Array
+  },
   components: {
     CommonGallery
   },
   data () {
     return {
-      showGallery: false,
-      imgs: ['/static/img/detail1.jpg', '/static/img/detail2.jpg']
+      showGallery: false
     }
   },
   methods: {

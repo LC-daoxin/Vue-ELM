@@ -45,10 +45,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScorll)
   },
-  deactivated () {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.handleScorll)
   }
 }
